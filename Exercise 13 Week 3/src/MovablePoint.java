@@ -42,13 +42,13 @@ public class MovablePoint implements Movable{
 
     @Override
     public void moveUp() {
-       int up= (y-=ySpeed);
+       int up= (y+=ySpeed);
         System.out.println("\nThe unit has moved "+up+" UP with speed of "+ySpeed);
     }
 
     @Override
     public void moveDown() {
-        int down= (y+=ySpeed);
+        int down= (y-=ySpeed);
         System.out.println("\nThe unit has moved "+down+" Down with speed of "+ySpeed);
     }
 
