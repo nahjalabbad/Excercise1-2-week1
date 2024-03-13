@@ -39,9 +39,11 @@ public class ArticleService {
     }
 
     public boolean publish(int id){
+        LocalDate publishDate=LocalDate.now();
         for (Article article:articles) {
            if (article.getId()==id){
                article.setPublished(true);
+               article.setPublishDate(publishDate);
                return true;
            }
         }
