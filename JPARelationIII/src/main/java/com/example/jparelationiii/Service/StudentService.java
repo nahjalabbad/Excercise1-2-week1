@@ -65,6 +65,10 @@ public class StudentService {
         if (student==null){
             throw new ApiException("Id not found");
         }
+           if (student.getMajor().equalsIgnoreCase(major)){
+            throw new ApiException("the major entered is the same as the one in student major");
+        }
+        
         student.setMajor(major);
         student.getCourses().forEach(course -> course.getStudents().remove(student));
         student.getCourses().clear();
